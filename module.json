@@ -1,0 +1,26 @@
+{
+	"name": "dadodaresposta",
+	"title": "Dado da Resposta",
+	"description": "",
+	"version": "0.0.1",
+	"minimumCoreVersion" : "9",
+	"compatibleCoreVersion" : "10",
+	"author": "",
+	"esmodules": [
+		"./scripts/main.js"
+	],
+	"styles": [
+		"./css/style.css"
+	],
+	"url": "",
+	"manifest": "",
+	"download": "",
+  "dependencies": [
+    {
+      "type": "module",
+      "name": "dice-so-nice",
+      "manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/raw/master/module/module.json"
+    } 
+  ]
+}
+
