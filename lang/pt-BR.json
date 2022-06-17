@@ -43,27 +43,21 @@
 
 		"dice": {
 			"black": {
-        "name": "ptbr-black",
 				"label": "Preto"
 			},
-			"black": {
-        "name": "ptbr-blood",
+			"blood": {
 				"label": "Sangue"
 			},
-			"black": {
-        "name": "ptbr-color",
+			"color": {
 				"label": "Colorido"
 			},
-			"black": {
-        "name": "ptbr-color2",
+			"color2": {
 				"label": "Colorido 2"
 			},
-			"black": {
-        "name": "ptbr-white",
+			"white": {
 				"label": "Branco"
 			},
-			"black": {
-        "name": "ptbr-modern",
+			"modern": {
 				"label": "Moderno"
 			}   
     }     

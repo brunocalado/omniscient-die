@@ -43,27 +43,21 @@
     
 		"dice": {
 			"black": {
-        "name": "en-black",
 				"label": "Black"
 			},
 			"blood": {
-        "name": "en-blood",
 				"label": "Blood"
 			},
 			"color": {
-        "name": "en-color",
 				"label": "Color"
 			},
 			"color2": {
-        "name": "en-color2",
 				"label": "Color 2"
 			},
 			"white": {
-        "name": "en-white",
 				"label": "White"
 			},
 			"modern": {
-        "name": "en-modern",
 				"label": "Modern"
 			}   
     }         

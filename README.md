@@ -5,11 +5,11 @@ This module adds a die that can be invoked with a scroll expression: /r 1dr.
 
 Some GMs like to resolve situations very quickly with a roll.
 
-Example: A player asks if there is a big tree near where he is. The GM says he's going to roll a dice and if it's even the answer is yes, and if it's odd the answer is no.
+**Example:** A player asks if there is a big tree near where he is. The GM says he's going to roll a dice and if it's even the answer is yes, and if it's odd the answer is no.
 
 This module intends to do the same thing in an expanded form.
 
-Results
+**Results**
 - Yes, E... = Yes and has a magnified effect.
 - Yes = Expected from yes.
 - Yes, but = This can be a partial yes. This can be a yes with a twist or complication.
@@ -30,11 +30,11 @@ Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolage
 
 Alguns mestres gostam de resolver situações de forma bem rápida com uma rolagem. 
 
-Exemplo: Um jogador pergunta se existe uma grande árvore próximo ao lugar em que ele se encontra. O mestre diz que vai rolar um dado e se for par a resposta é sim, e se for ímpar a resposta é não. 
+**Exemplo:** Um jogador pergunta se existe uma grande árvore próximo ao lugar em que ele se encontra. O mestre diz que vai rolar um dado e se for par a resposta é sim, e se for ímpar a resposta é não. 
 
 Esse módulo pretende fazer a mesma coisa de forma expandida.
 
-Resultados
+**Resultados**
 - Sim, E... = Sim e tem um efeito ampliado.
 - Sim = O esperado do sim.
 - Sim, mas = Um sim parcial ou um sim com uma complicação.
@@ -98,7 +98,7 @@ You also need to share with me the default name convention for your language. Th
     "path": "lang/fr.json"
 }  
 ```
-- You also need to modify the images. You can download templates clicking [HERE](https://github.com/brunocalado/omniscient-die/raw/main/docs/templates-for-omniscient-die.7z). You can use Photoshop or [GIMP](https://www.gimp.org/) to work, you just need to send me the six png files.
+- You also need to modify the images. You can download templates [CLICKING HERE](https://github.com/brunocalado/omniscient-die/raw/main/docs/templates-for-omniscient-die.7z). You can use Photoshop or [GIMP](https://www.gimp.org/) to work, you just need to send me the six PNG files.
 
 # License
 
