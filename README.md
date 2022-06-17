@@ -78,6 +78,28 @@ You can type `/r 1dr` on the chat or create a macro.
   <img width="1000" src="docs/en-guide-02.webp">
 </p>
 
+
+# Localization
+If you want to translate this module [DOWNLOAD THIS FILE](https://raw.githubusercontent.com/brunocalado/omniscient-die/main/lang/en.json) and translate it. After that open an issue sharing your translation. 
+
+You also need to share with me the default name convention for your language. This is very easy to get. 
+- Find a system or module which is translated to your language. 
+- Open the **module.json** or **system.json** file.
+- You should find something like the code above. It's under **languages**. Share with me **lang, name and path** for your language.
+```json
+{
+  "lang": "en",
+  "name": "English",
+  "path": "lang/en.json"
+},
+{
+    "lang": "fr",
+    "name": "Français",
+    "path": "lang/fr.json"
+}  
+```
+- You also need to modify the images. You can download templates clicking here. You can use Photoshop or [GIMP](https://www.gimp.org/) to work, you just need to send me the six png files.
+
 # License
 
 - [CODE LICENSE](https://github.com/brunocalado/omniscient-die/blob/main/LICENSE)
