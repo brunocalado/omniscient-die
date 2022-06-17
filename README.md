@@ -82,6 +82,17 @@ You can type `/r 1dr` on the chat or create a macro.
   <img width="1000" src="docs/en-guide-02.webp">
 </p>
 
+# Dice so Nice
+
+<p align="center">
+  <img width="1000" src="docs/guide-dicesonice.webp">
+</p>
+
+## Português
+Você pode colocar sons ou animações para executar quando o dado for rolado. Para fazer isso use a interface de configurações do Dice so Nice.
+
+## English
+You can add a sound or an animation to the dice. Just go to Dice so Nice settings to do that.
 
 # Localization
 If you want to translate this module [DOWNLOAD THIS FILE](https://raw.githubusercontent.com/brunocalado/omniscient-die/main/lang/en.json) and translate it. After that open an issue sharing your translation. 
@@ -117,5 +128,5 @@ You also need to share with me the default name convention for your language. Th
   The designer is [Matheus Moreno Mota](https://www.instagram.com/matheus_mesmo/).
 </p>
 <p align="center">
-  <img width="200" src="docs/capybara.svg">
+  <img width="200" src="docs/capybara.webp">
 </p>
