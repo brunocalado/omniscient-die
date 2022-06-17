@@ -36,9 +36,13 @@ Você pode instalar esse com esse link: **https://raw.githubusercontent.com/brun
 ## Português
 Siga as instruções da imagem. Depois, use a expressão de rolagem `/r 1dr` para rolar. O módulo tem um atalho de teclado, cheque controles no Foundry VTT.
 <p align="center">
-  <img width="1000" src="docs/en-guide-01.webp">
+  <img width="1000" src="docs/ptbr-guide-01.webp">
 </p>
 
+Você pode digitar no chat `/r 1dr` ou criar uma expressão de rolagem.
+<p align="center">
+  <img width="1000" src="docs/en-guide-02.webp">
+</p>
 
 ## English
 Follow the image steps. After that use `/r 1dr` to roll. The module also has a keybinding, check controls.
@@ -47,6 +51,10 @@ Follow the image steps. After that use `/r 1dr` to roll. The module also has a k
   <img width="1000" src="docs/en-guide-01.webp">
 </p>
 
+You can type `/r 1dr` on the chat or create a macro.
+<p align="center">
+  <img width="1000" src="docs/en-guide-02.webp">
+</p>
 
 Vídeo em Breve!
 [![Scum and Villainy no Foundry VTT](https://img.youtube.com/vi/FCbRKrjYTOM/0.jpg)](https://www.youtube.com/watch?v=FCbRKrjYTOM)
