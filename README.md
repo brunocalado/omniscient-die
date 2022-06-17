@@ -98,7 +98,7 @@ You also need to share with me the default name convention for your language. Th
     "path": "lang/fr.json"
 }  
 ```
-- You also need to modify the images. You can download templates clicking here. You can use Photoshop or [GIMP](https://www.gimp.org/) to work, you just need to send me the six png files.
+- You also need to modify the images. You can download templates clicking [HERE](https://github.com/brunocalado/omniscient-die/raw/main/docs/templates-for-omniscient-die.7z). You can use Photoshop or [GIMP](https://www.gimp.org/) to work, you just need to send me the six png files.
 
 # License
 
