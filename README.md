@@ -67,7 +67,7 @@ Siga as instruções da imagem. Depois, use a expressão de rolagem `/r 1dr` par
 
 Você pode digitar no chat `/r 1dr` ou criar uma expressão de rolagem.
 <p align="center">
-  <img width="1000" src="docs/en-guide-02.webp">
+  <img width="800" src="docs/en-guide-02.webp">
 </p>
 
 ## English
@@ -79,13 +79,13 @@ Follow the image steps. After that use `/r 1dr` to roll. The module also has a k
 
 You can type `/r 1dr` on the chat or create a macro.
 <p align="center">
-  <img width="1000" src="docs/en-guide-02.webp">
+  <img width="800" src="docs/en-guide-02.webp">
 </p>
 
 # Dice so Nice
 
 <p align="center">
-  <img width="1000" src="docs/guide-dicesonice.webp">
+  <img width="800" src="docs/guide-dicesonice.webp">
 </p>
 
 ## Português
