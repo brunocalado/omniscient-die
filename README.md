@@ -1,7 +1,7 @@
 # Omniscient Die
 
 # About
-This module adds a dice that can be invoked with a scroll expression: /r 1dr.
+This module adds a die that can be invoked with a scroll expression: /r 1dr.
 
 Some GMs like to resolve situations very quickly with a roll.
 
@@ -12,8 +12,8 @@ This module intends to do the same thing in an expanded form.
 Results
 - Yes, E... = Yes and has a magnified effect.
 - Yes = Expected from yes.
-- Yes, but = A partial yes, but with a complication.
-- No, but = A not partial, but with a complication.
+- Yes, but = This can be a partial yes. This can be a yes with a twist or complication.
+- No, but = This can be a partial no. This can be a no with a twist or complication.
 - No = Expected from no.
 - No, and... = No, and has a magnified effect.
 
@@ -37,8 +37,8 @@ Esse módulo pretende fazer a mesma coisa de forma expandida.
 Resultados
 - Sim, E... = Sim e tem um efeito ampliado.
 - Sim = O esperado do sim.
-- Sim, mas = Um sim parcial, mas com uma complicação.
-- Não, mas = Um não parcial, mas com uma complicação.
+- Sim, mas = Um sim parcial ou um sim com uma complicação.
+- Não, mas = Um não parcial ou um não com uma complicação.
 - Não = O esperado do não.
 - Não, e... = Não e tem um efeito ampliado.
 
@@ -77,9 +77,6 @@ You can type `/r 1dr` on the chat or create a macro.
 <p align="center">
   <img width="1000" src="docs/en-guide-02.webp">
 </p>
-
-Vídeo em Breve!
-[![Scum and Villainy no Foundry VTT](https://img.youtube.com/vi/FCbRKrjYTOM/0.jpg)](https://www.youtube.com/watch?v=FCbRKrjYTOM)
 
 # License
 

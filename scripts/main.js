@@ -15,11 +15,11 @@ Hooks.once('init', function() {
     choices: {
       //"ptbr-black": 'Preto',
       [game.i18n.localize("omniscient-die.dice.black.name")]: game.i18n.localize("omniscient-die.dice.black.label"),
-      "ptbr-blood": 'Sangue',
-      "ptbr-color": 'Colorido',
-      "ptbr-color2": 'Colorido 2',
-      "ptbr-modern": 'Moderno',
-      "ptbr-white": 'Branco'
+      [game.i18n.localize("omniscient-die.dice.blood.name")]: game.i18n.localize("omniscient-die.dice.blood.label"),
+      [game.i18n.localize("omniscient-die.dice.color.name")]: game.i18n.localize("omniscient-die.dice.color.label"),
+      [game.i18n.localize("omniscient-die.dice.color2.name")]: game.i18n.localize("omniscient-die.dice.color2.label"),
+      [game.i18n.localize("omniscient-die.dice.modern.name")]: game.i18n.localize("omniscient-die.dice.modern.label"),
+      [game.i18n.localize("omniscient-die.dice.white.name")]: game.i18n.localize("omniscient-die.dice.white.label")
     },
     default: "ptbr-color",
     config: true,

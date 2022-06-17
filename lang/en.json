@@ -39,30 +39,30 @@
         "title": "No, and...",
         "content": "No, and something else happens."
       }      
-    }    
+    },    
     
 		"dice": {
 			"black": {
         "name": "en-black",
 				"label": "Black"
 			},
-			"black": {
+			"blood": {
         "name": "en-blood",
 				"label": "Blood"
 			},
-			"black": {
+			"color": {
         "name": "en-color",
 				"label": "Color"
 			},
-			"black": {
+			"color2": {
         "name": "en-color2",
 				"label": "Color 2"
 			},
-			"black": {
+			"white": {
         "name": "en-white",
 				"label": "White"
 			},
-			"black": {
+			"modern": {
         "name": "en-modern",
 				"label": "Modern"
 			}   
