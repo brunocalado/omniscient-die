@@ -13,18 +13,20 @@ Hooks.once('init', function() {
     scope: "world",
     type: String,
     choices: {
-      "ptbr-black": 'Preto',
+      //"ptbr-black": 'Preto',
+      [game.i18n.localize("omniscient-die.dice.black.name")]: game.i18n.localize("omniscient-die.dice.black.label"),
       "ptbr-blood": 'Sangue',
       "ptbr-color": 'Colorido',
       "ptbr-color2": 'Colorido 2',
-      "ptbr-modern": 'Moderno'
+      "ptbr-modern": 'Moderno',
+      "ptbr-white": 'Branco'
     },
     default: "ptbr-color",
     config: true,
     onChange: debouncedReload
   });
   // location ->      "book": game.i18n.localize('STORYTELLER.Settings.ThemeBook'),
-
+//[game.i18n.localize("omniscient-die.dice.black.name")]: game.i18n.localize("omniscient-die.dice.black.label"),
   // call this with: game.settings.get("omniscient-die", "chattip")
   game.settings.register(moduleName, 'chattip', {
     name: 'Dica no Chat',

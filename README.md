@@ -1,7 +1,29 @@
 # Omniscient Die
 
 # About
-TODO
+This module adds a dice that can be invoked with a scroll expression: /r 1dr.
+
+Some GMs like to resolve situations very quickly with a roll.
+
+Example: A player asks if there is a big tree near where he is. The GM says he's going to roll a dice and if it's even the answer is yes, and if it's odd the answer is no.
+
+This module intends to do the same thing in an expanded form.
+
+Results
+- Yes, E... = Yes and has a magnified effect.
+- Yes = Expected from yes.
+- Yes, but = A partial yes, but with a complication.
+- No, but = A not partial, but with a complication.
+- No = Expected from no.
+- No, and... = No, and has a magnified effect.
+
+Player: "Is the party interrupted by a patrol of guards?"
+- YEA! - Master: "Players come face to face with a patrol guard and still led by the ruthless captain!"
+- Yes - Master: "A guard patrol has found you."
+- Yes, But - Master: "A group of guards moves to where you are, but they still haven't noticed you."
+- No, But - Master: "No, but a noisy punk is approaching you."
+- No - Master: "No."
+- NO! - Master: "No and the guard patrol was called to solve a situation far away. You don't have to worry about them."
 
 # Sobre
 Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolagem: `/r 1dr`.
@@ -68,6 +90,7 @@ Vídeo em Breve!
 # Assets
 
 - The images are made with [GIMP](https://www.gimp.org/) and Photoshop.
-- The designer is Matheus Moreno Mota.
+- The designer is [Matheus Moreno Mota](https://www.instagram.com/matheus_mesmo/).
+
 
 

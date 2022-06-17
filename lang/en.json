@@ -41,6 +41,33 @@
       }      
     }    
     
+		"dice": {
+			"black": {
+        "name": "en-black",
+				"label": "Black"
+			},
+			"black": {
+        "name": "en-blood",
+				"label": "Blood"
+			},
+			"black": {
+        "name": "en-color",
+				"label": "Color"
+			},
+			"black": {
+        "name": "en-color2",
+				"label": "Color 2"
+			},
+			"black": {
+        "name": "en-white",
+				"label": "White"
+			},
+			"black": {
+        "name": "en-modern",
+				"label": "Modern"
+			}   
+    }         
+    
   }
 
 }

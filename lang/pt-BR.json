@@ -39,8 +39,36 @@
         "title": "Não, e...",
         "content": "Não e tem um efeito ampliado."
       }      
-    }   
+    },   
+
+		"dice": {
+			"black": {
+        "name": "ptbr-black",
+				"label": "Preto"
+			},
+			"black": {
+        "name": "ptbr-blood",
+				"label": "Sangue"
+			},
+			"black": {
+        "name": "ptbr-color",
+				"label": "Colorido"
+			},
+			"black": {
+        "name": "ptbr-color2",
+				"label": "Colorido 2"
+			},
+			"black": {
+        "name": "ptbr-white",
+				"label": "Branco"
+			},
+			"black": {
+        "name": "ptbr-modern",
+				"label": "Moderno"
+			}   
+    }     
     
   }
 
 }
+
