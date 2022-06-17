@@ -113,14 +113,9 @@ You also need to share with me the default name convention for your language. Th
 # Assets
 
 - The images are made with [GIMP](https://www.gimp.org/) and Photoshop.
-
-<table style="align: center;">
-<tbody>
-<tr>
-<td style="text-align: center;">The designer is [Matheus Moreno Mota](https://www.instagram.com/matheus_mesmo/).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><img width="200" src="docs/capybara.svg">;</td>
-</tr>
-</tbody>
-</table>
+<p align="center">
+  The designer is [Matheus Moreno Mota](https://www.instagram.com/matheus_mesmo/).
+</p>
+<p align="center">
+  <img width="200" src="docs/capybara.svg">
+</p>
