@@ -67,7 +67,7 @@ Siga as instruções da imagem. Depois, use a expressão de rolagem `/r 1dr` par
 
 Você pode digitar no chat `/r 1dr` ou criar uma expressão de rolagem.
 <p align="center">
-  <img width="800" src="docs/en-guide-02.webp">
+  <img width="600" src="docs/en-guide-02.webp">
 </p>
 
 ## English
@@ -79,20 +79,20 @@ Follow the image steps. After that use `/r 1dr` to roll. The module also has a k
 
 You can type `/r 1dr` on the chat or create a macro.
 <p align="center">
-  <img width="800" src="docs/en-guide-02.webp">
+  <img width="600" src="docs/en-guide-02.webp">
 </p>
 
 # Dice so Nice
-
-<p align="center">
-  <img width="800" src="docs/guide-dicesonice.webp">
-</p>
 
 ## Português
 Você pode colocar sons ou animações para executar quando o dado for rolado. Para fazer isso use a interface de configurações do Dice so Nice.
 
 ## English
 You can add a sound or an animation to the dice. Just go to Dice so Nice settings to do that.
+
+<p align="center">
+  <img width="800" src="docs/guide-dicesonice.webp">
+</p>
 
 # Localization
 If you want to translate this module [DOWNLOAD THIS FILE](https://raw.githubusercontent.com/brunocalado/omniscient-die/main/lang/en.json) and translate it. After that open an issue sharing your translation. 
@@ -124,9 +124,8 @@ You also need to share with me the default name convention for your language. Th
 # Assets
 
 - The images are made with [GIMP](https://www.gimp.org/) and Photoshop.
-<p align="center">
-  The designer is [Matheus Moreno Mota](https://www.instagram.com/matheus_mesmo/).
-</p>
+- The designer is [Matheus Moreno Mota](https://www.instagram.com/matheus_mesmo/)
+
 <p align="center">
   <img width="200" src="docs/capybara.webp">
 </p>
