@@ -1,0 +1,46 @@
+{
+  
+	"omniscient-die": {
+    
+		"settings": {
+			"theme": {
+        "name": "Tema",
+				"hint": "Altere o tema do dado. ATENÇÃO! Ao alterar algo o Foundry VTT será recarregado."
+			}
+    },
+    
+		"keybindings": {
+      "name": "Dado Onisciente",
+      "hint": "Esse atalho vai rolar o dado Onisciente."
+    },    
+    
+		"tips": {
+			"yesand": {
+        "title": "Sim, e...",
+				"content": "Sim e tem um efeito ampliado."
+			},        
+      "no": {
+        "title": "Não",
+        "content": "O esperado do não."
+      },
+			"nobut": {
+        "title": "Não, mas",
+        "content": "Pode ser um não parcial, pode ser um não com uma complicação."
+      },
+			"yesbut": {
+        "title": "Sim, mas",
+        "content": "Pode ser um sim parcial, pode ser um sim com uma complicação."
+      },
+			"yes": {
+        "title": "Sim",
+        "content": "O esperado do sim."
+      },
+			"noand": {
+        "title": "Não, e...",
+        "content": "Não e tem um efeito ampliado."
+      }      
+    }   
+    
+  }
+
+}

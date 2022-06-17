@@ -1,26 +1,41 @@
 {
-	"name": "dadodaresposta",
-	"title": "Dado da Resposta",
-	"description": "",
-	"version": "0.0.1",
+  
+	"name": "omniscient-die",
+	"title": "Omniscient Die",
+	"description": "/r 1dr will answer your question!",
+	"version": "1.0",
 	"minimumCoreVersion" : "9",
 	"compatibleCoreVersion" : "10",
 	"author": "",
 	"esmodules": [
 		"./scripts/main.js"
 	],
-	"styles": [
-		"./css/style.css"
-	],
-	"url": "",
-	"manifest": "",
-	"download": "",
+	"styles": [],
+
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+        "lang": "pt-BR",
+        "name": "Português Brasileiro",
+        "path": "lang/pt-BR.json"
+    }         
+  ],
+
   "dependencies": [
     {
       "type": "module",
       "name": "dice-so-nice",
       "manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/raw/master/module/module.json"
     } 
-  ]
+  ],
+  
+  "url": "https://github.com/brunocalado/omniscient-die",
+  "manifest": "https://raw.githubusercontent.com/brunocalado/omniscient-die/main/module.json",  
+  "download": "https://codeload.github.com/brunocalado/omniscient-die/zip/main"
+  
 }
 
