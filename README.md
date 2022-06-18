@@ -31,7 +31,7 @@ Player: "Is the party interrupted by a patrol of guards?"
 
 # Sobre
 
-[![Dado Responde Rápido](docs/en-guide-02.webp)](https://www.youtube.com/watch?v=kzzlR2fJL-E)
+[![Dado Responde Rápido](docs/youtube.webp)](https://www.youtube.com/watch?v=kzzlR2fJL-E)
 
 Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolagem: `/r 1dr`.
 
