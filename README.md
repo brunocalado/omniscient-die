@@ -31,7 +31,7 @@ Player: "Is the party interrupted by a patrol of guards?"
 
 # Sobre
 
-[![Dado Responde Rápido](https://i9.ytimg.com/vi/kzzlR2fJL-E/maxresdefault.jpg?time=1655571600000&sqp=CJCJuJUG&rs=AOn4CLDNepdea7JHNvDmy2a8k5MBdsMn4g)
+[![Scum and Villainy no Foundry VTT](https://img.youtube.com/vi/kzzlR2fJL-E/0.jpg)](https://www.youtube.com/watch?v=kzzlR2fJL-E)
 
 Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolagem: `/r 1dr`.
 
