@@ -14,7 +14,7 @@ Some GMs like to resolve situations very quickly with a roll.
 This module intends to do the same thing in an expanded form.
 
 **Results**
-- Yes, E... = Yes and has a magnified effect.
+- Yes, and... = Yes and has a magnified effect.
 - Yes = Expected from yes.
 - Yes, but = This can be a partial yes. This can be a yes with a twist or complication.
 - No, but = This can be a partial no. This can be a no with a twist or complication.
@@ -30,6 +30,9 @@ Player: "Is the party interrupted by a patrol of guards?"
 - NO! - Master: "No and the guard patrol was called to solve a situation far away. You don't have to worry about them."
 
 # Sobre
+
+[![Dado Responde Rápido](https://i9.ytimg.com/vi/kzzlR2fJL-E/maxresdefault.jpg?time=1655571600000&sqp=CJCJuJUG&rs=AOn4CLDNepdea7JHNvDmy2a8k5MBdsMn4g)
+
 Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolagem: `/r 1dr`.
 
 Alguns mestres gostam de resolver situações de forma bem rápida com uma rolagem. 
@@ -39,7 +42,7 @@ Alguns mestres gostam de resolver situações de forma bem rápida com uma rolag
 Esse módulo pretende fazer a mesma coisa de forma expandida.
 
 **Resultados**
-- Sim, E... = Sim e tem um efeito ampliado.
+- Sim, e... = Sim e tem um efeito ampliado.
 - Sim = O esperado do sim.
 - Sim, mas = Um sim parcial ou um sim com uma complicação.
 - Não, mas = Um não parcial ou um não com uma complicação.
@@ -47,12 +50,12 @@ Esse módulo pretende fazer a mesma coisa de forma expandida.
 - Não, e... = Não e tem um efeito ampliado.
 
 Jogador: "O grupo é interrompido por uma patrulha de guardas?"
-- SIM! - Mestre: "Os jogadores dão de cara com uma patrulha de guarda e ainda liderada pelo implacável capitão!"
+- Sim, E... - Mestre: "Os jogadores dão de cara com uma patrulha de guarda e ainda liderada pelo implacável capitão!"
 - Sim - Mestre: "Uma patrulha de guarda achou vocês."
 - Sim, Mas - Mestre: "Um grupo de guardas se move para onde vocês estão, mas eles ainda não notaram vocês."
 - Não, Mas - Mestre: "Não, mas um pinguço barulhento se aproxima de vocês."
 - Não - Mestre: "Não."
-- NÃO! - Mestre: "Não e a patrulha de guardas foi chamada para resolver uma situação longe daí. Vocês não precisam se preocupar com eles."
+- Não, e... - Mestre: "Não e a patrulha de guardas foi chamada para resolver uma situação longe daí. Vocês não precisam se preocupar com eles."
 
 # Instalação / Installation
 Você pode instalar esse com esse link: **https://raw.githubusercontent.com/brunocalado/omniscient-die/main/module.json**

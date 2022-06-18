@@ -3,21 +3,7 @@ const moduleName = 'omniscient-die';
 import {dadoDaResposta} from './die.js';
 
 Hooks.once('init', function() {
-  
-  const dieThemeColor = game.i18n.localize("omniscient-die.dice.color.name");
-  const dieThemeColor2 = game.i18n.localize("omniscient-die.dice.color2.name");
 
-  /*
-      [game.i18n.localize("omniscient-die.dice.black.name")]: game.i18n.localize("omniscient-die.dice.black.label"),
-      [game.i18n.localize("omniscient-die.dice.blood.name")]: game.i18n.localize("omniscient-die.dice.blood.label"),
-      [game.i18n.localize("omniscient-die.dice.color.name")]: game.i18n.localize("omniscient-die.dice.color.label"),
-      [game.i18n.localize("omniscient-die.dice.color2.name")]: game.i18n.localize("omniscient-die.dice.color2.label"),
-      [game.i18n.localize("omniscient-die.dice.modern.name")]: game.i18n.localize("omniscient-die.dice.modern.label"),
-      [game.i18n.localize("omniscient-die.dice.white.name")]: game.i18n.localize("omniscient-die.dice.white.label")  
-      
-      'ptbr-color': 'Cor'
-  */
-  
   // --------------------------------------------------
   // SETTINGS
   // call this with: game.settings.get("omniscient-die", "theme")
@@ -75,46 +61,50 @@ Hooks.once("init", async function () {
 
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
   let message = game.messages.get(chatMessageID);
-  let messageContent = ``;
+  let messageContent;
   let omniscientDieMessageFlag = false;
-  
+  let rollResult; 
+   
   if (message.isAuthor) {    
     message.roll.dice.forEach(dice => {
       if (dice instanceof dadoDaResposta) {
         omniscientDieMessageFlag = true;
         dice.results.forEach(res => {
-          switch (res.result) {
-            case 1:
-              messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesand.title")}</p>`;
-              break;
-            case 2:
-              messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.no.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.no.title")}</p>`;            
-              break;
-            case 3:
-              messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.nobut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.nobut.title")}</p>`;            
-              break;
-            case 4:
-              messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</p>`;            
-              break;
-            case 5:
-              messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yes.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yes.title")}</p>`;            
-              break;
-            case 6:
-              messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.noand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.noand.title")}</p>`;            
-              break;
-          }
+          rollResult = res.result;
         });
       }
-    });
+    }); // ONLY ONE RESULT
 
     if ( omniscientDieMessageFlag && game.settings.get("omniscient-die", "chattip") ) {
+      switch (rollResult) {
+        case 1:
+          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesand.title")}</p>`;
+          break;
+        case 2:
+          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.no.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.no.title")}</p>`;            
+          break;
+        case 3:
+          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.nobut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.nobut.title")}</p>`;            
+          break;
+        case 4:
+          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</p>`;            
+          break;
+        case 5:
+          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yes.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yes.title")}</p>`;            
+          break;
+        case 6:
+          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.noand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.noand.title")}</p>`;            
+          break;
+      }
+      
       ChatMessage.create({
         content: messageContent,
         whisper: message.data.whisper,
         blind: message.data.blind
-      });
+      });      
     }
-  }
+
+  } // END MAIN IF
 });
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
@@ -150,3 +140,6 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     ]      
   });  
 });
+
+// -----------------------------------
+// Functions
