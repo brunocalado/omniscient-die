@@ -22,12 +22,12 @@ This module intends to do the same thing in an expanded form.
 - No, and... = No, and has a magnified effect.
 
 Player: "Is the party interrupted by a patrol of guards?"
-- YEA! - Master: "Players come face to face with a patrol guard and still led by the ruthless captain!"
+- Yes, and... - Master: "Players come face to face with a patrol guard and still led by the ruthless captain!"
 - Yes - Master: "A guard patrol has found you."
 - Yes, But - Master: "A group of guards moves to where you are, but they still haven't noticed you."
 - No, But - Master: "No, but a noisy punk is approaching you."
 - No - Master: "No."
-- NO! - Master: "No and the guard patrol was called to solve a situation far away. You don't have to worry about them."
+- No, and... - Master: "No and the guard patrol was called to solve a situation far away. You don't have to worry about them."
 
 # Sobre
 
@@ -50,7 +50,7 @@ Esse módulo pretende fazer a mesma coisa de forma expandida.
 - Não, e... = Não e tem um efeito ampliado.
 
 Jogador: "O grupo é interrompido por uma patrulha de guardas?"
-- Sim, E... - Mestre: "Os jogadores dão de cara com uma patrulha de guarda e ainda liderada pelo implacável capitão!"
+- Sim, e... - Mestre: "Os jogadores dão de cara com uma patrulha de guarda e ainda liderada pelo implacável capitão!"
 - Sim - Mestre: "Uma patrulha de guarda achou vocês."
 - Sim, Mas - Mestre: "Um grupo de guardas se move para onde vocês estão, mas eles ainda não notaram vocês."
 - Não, Mas - Mestre: "Não, mas um pinguço barulhento se aproxima de vocês."
