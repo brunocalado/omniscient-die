@@ -6,8 +6,9 @@ Hooks.once('init', function() {
 
   // --------------------------------------------------
   // SETTINGS
-  // call this with: game.settings.get("omniscient-die", "theme")
   const debouncedReload = debounce(() => location.reload(), 1000); // RELOAD AFTER CHANGE
+  
+  // call this with: game.settings.get("omniscient-die", "theme")
   game.settings.register(moduleName, 'theme', {
     name: game.i18n.localize("omniscient-die.settings.theme.name"), 
     hint: game.i18n.localize("omniscient-die.settings.theme.hint"),
@@ -46,6 +47,10 @@ Hooks.once('init', function() {
     onDown: async () =>  {
       const roll = await new Roll("1dr").evaluate({async: true});
       game.dice3d.showForRoll(roll, game.user, true); // to show for all users
+      if ( game.settings.get("omniscient-die", "chattip") ) {
+              console.log(roll.result);
+        resultToChatMessage (roll.result);
+      }      
     },
     onUp: () => {},
     restricted: false,  // Restrict this Keybinding to gamemaster only?
@@ -61,7 +66,6 @@ Hooks.once("init", async function () {
 
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
   let message = game.messages.get(chatMessageID);
-  let messageContent;
   let omniscientDieMessageFlag = false;
   let rollResult; 
    
@@ -76,32 +80,7 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
     }); // ONLY ONE RESULT
 
     if ( omniscientDieMessageFlag && game.settings.get("omniscient-die", "chattip") ) {
-      switch (rollResult) {
-        case 1:
-          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesand.title")}</p>`;
-          break;
-        case 2:
-          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.no.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.no.title")}</p>`;            
-          break;
-        case 3:
-          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.nobut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.nobut.title")}</p>`;            
-          break;
-        case 4:
-          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</p>`;            
-          break;
-        case 5:
-          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yes.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yes.title")}</p>`;            
-          break;
-        case 6:
-          messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.noand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.noand.title")}</p>`;            
-          break;
-      }
-      
-      ChatMessage.create({
-        content: messageContent,
-        whisper: message.data.whisper,
-        blind: message.data.blind
-      });      
+      resultToChatMessage (rollResult);
     }
 
   } // END MAIN IF
@@ -143,3 +122,31 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 
 // -----------------------------------
 // Functions
+function resultToChatMessage (rollResult) {
+  rollResult = parseInt(rollResult);
+  let messageContent;
+  switch (rollResult) {
+    case 1:
+      messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesand.title")}</p>`;
+      break;
+    case 2:
+      messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.no.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.no.title")}</p>`;            
+      break;
+    case 3:
+      messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.nobut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.nobut.title")}</p>`;            
+      break;
+    case 4:
+      messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yesbut.title")}</p>`;            
+      break;
+    case 5:
+      messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.yes.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.yes.title")}</p>`;            
+      break;
+    case 6:
+      messageContent = `<h1>${game.i18n.localize("omniscient-die.tips.noand.title")}</h1><p>${game.i18n.localize("omniscient-die.tips.noand.title")}</p>`;           
+      break;
+  }
+  
+  ChatMessage.create({
+    content: messageContent
+  }); 
+}
