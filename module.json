@@ -3,10 +3,21 @@
 	"name": "omniscient-die",
 	"title": "Omniscient Die",
 	"description": "/r 1dr will answer your question!",
-	"version": "1.3",
-	"minimumCoreVersion" : "9",
-	"compatibleCoreVersion" : "10",
-	"author": "",
+  
+	"version": "1.4",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  
+  "authors": [
+    {
+      "name": "Mestre Digital",
+      "url": "https://www.youtube.com/c/MestreDigital",
+      "flags": {}
+    }
+  ],
+  
 	"esmodules": [
 		"./scripts/main.js"
 	],
@@ -25,13 +36,16 @@
     }         
   ],
 
-  "dependencies": [
-    {
-      "type": "module",
-      "name": "dice-so-nice",
-      "manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/raw/master/module/module.json"
-    } 
-  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "dice-so-nice",
+        "type": "module",
+        "manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/raw/master/module/module.json",
+        "compatibility": {}
+      }
+    ]
+  },
   
   "url": "https://github.com/brunocalado/omniscient-die",
   "manifest": "https://raw.githubusercontent.com/brunocalado/omniscient-die/main/module.json",  
