@@ -1,10 +1,10 @@
 {
   
-	"name": "omniscient-die",
+	"id": "omniscient-die",
 	"title": "Omniscient Die",
 	"description": "/r 1dr will answer your question!",
   
-	"version": "1.4",
+	"version": "1.5",
   "compatibility": {
     "minimum": "10",
     "verified": "10"
