@@ -6,6 +6,6 @@ export class dadoDaResposta extends Die {
 
     /* -------------------------------------------- */
     /** @override */
-    static DENOMINATION = "r";
+    static DENOMINATION = "o"; // "r";
 
 }

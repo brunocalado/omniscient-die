@@ -65,7 +65,7 @@ Você pode instalar esse com esse link: **https://raw.githubusercontent.com/brun
 ## Português
 Siga as instruções da imagem. Depois, use a expressão de rolagem `/r 1dr` para rolar. O módulo tem um atalho de teclado, cheque controles no Foundry VTT.
 <p align="center">
-  <img width="1000" src="docs/ptbr-guide-01.webp">
+  <img width="1000" src="docs/en-guide-01.webp">
 </p>
 
 Você pode digitar no chat `/r 1dr` ou criar uma expressão de rolagem.
@@ -132,3 +132,6 @@ You also need to share with me the default name convention for your language. Th
 <p align="center">
   <img width="200" src="docs/capybara.webp">
 </p>
+
+# Mestre Digital
+About this module creator: https://sites.google.com/view/mestredigitalmodules

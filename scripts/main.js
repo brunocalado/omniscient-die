@@ -6,7 +6,6 @@ Hooks.once('init', function() {
 
   // --------------------------------------------------
   // SETTINGS
-  const debouncedReload = debounce(() => location.reload(), 1000); // RELOAD AFTER CHANGE
   
   // call this with: game.settings.get("omniscient-die", "theme")
   game.settings.register(moduleName, 'theme', {
@@ -24,7 +23,7 @@ Hooks.once('init', function() {
     },
     default: "ptbr-color",
     config: true,
-    onChange: debouncedReload
+    requiresReload: true
   });
   // location ->      "book": game.i18n.localize('STORYTELLER.Settings.ThemeBook'), //[game.i18n.localize("omniscient-die.dice.black.name")]: game.i18n.localize("omniscient-die.dice.black.label"),
 
@@ -43,12 +42,11 @@ Hooks.once('init', function() {
   game.keybindings.register(moduleName, "omniscientDie", {
     name: game.i18n.localize("omniscient-die.keybindings.name"),
     hint: game.i18n.localize("omniscient-die.keybindings.hint"),
-    editable: [{ key: "KeyR", modifiers: []}],
+    editable: [{ key: "KeyO", modifiers: []}],
     onDown: async () =>  {
-      const roll = await new Roll("1dr").evaluate({async: true});
+      const roll = await new Roll("1do").evaluate({async: true});
       game.dice3d.showForRoll(roll, game.user, true); // to show for all users
       if ( game.settings.get("omniscient-die", "chattip") ) {
-              console.log(roll.result);
         resultToChatMessage (roll.result);
       }      
     },
@@ -61,7 +59,7 @@ Hooks.once('init', function() {
 }); // END INIT
 
 Hooks.once("init", async function () {
-  CONFIG.Dice.terms["r"] = dadoDaResposta;
+  CONFIG.Dice.terms["o"] = dadoDaResposta;
 });
 
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
