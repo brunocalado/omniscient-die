@@ -5,7 +5,7 @@
 </p>
 
 # About
-This module adds a die that can be invoked with a scroll expression: /r 1dr.
+This module adds a die that can be invoked with a scroll expression: /r 1do.
 
 Some GMs like to resolve situations very quickly with a roll.
 
@@ -33,7 +33,7 @@ Player: "Is the party interrupted by a patrol of guards?"
 
 [![Dado Responde Rápido](docs/youtube.webp)](https://www.youtube.com/watch?v=kzzlR2fJL-E)
 
-Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolagem: `/r 1dr`.
+Esse módulo adiciona um dado que pode ser invocado com uma expressão de rolagem: `/r 1do`.
 
 Alguns mestres gostam de resolver situações de forma bem rápida com uma rolagem. 
 
@@ -63,24 +63,24 @@ Você pode instalar esse com esse link: **https://raw.githubusercontent.com/brun
 # Instruções / Instructions
 
 ## Português
-Siga as instruções da imagem. Depois, use a expressão de rolagem `/r 1dr` para rolar. O módulo tem um atalho de teclado, cheque controles no Foundry VTT.
+Siga as instruções da imagem. Depois, use a expressão de rolagem `/r 1do` para rolar. O módulo tem um atalho de teclado, cheque controles no Foundry VTT.
 <p align="center">
   <img width="1000" src="docs/en-guide-01.webp">
 </p>
 
-Você pode digitar no chat `/r 1dr` ou criar uma expressão de rolagem.
+Você pode digitar no chat `/r 1do` ou criar uma expressão de rolagem.
 <p align="center">
   <img width="600" src="docs/en-guide-02.webp">
 </p>
 
 ## English
-Follow the image steps. After that use `/r 1dr` to roll. The module also has a keybinding, check controls.
+Follow the image steps. After that use `/r 1do` to roll. The module also has a keybinding, check controls.
 
 <p align="center">
   <img width="1000" src="docs/en-guide-01.webp">
 </p>
 
-You can type `/r 1dr` on the chat or create a macro.
+You can type `/r 1do` on the chat or create a macro.
 <p align="center">
   <img width="600" src="docs/en-guide-02.webp">
 </p>
