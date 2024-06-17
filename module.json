@@ -4,10 +4,10 @@
 	"title": "Omniscient Die",
 	"description": "/r 1do will answer your question!",
   
-	"version": "1.6",
+	"version": "1.7",
   "compatibility": {
     "minimum": "10",
-    "verified": "11"
+    "verified": "12"
   },
   
   "authors": [
