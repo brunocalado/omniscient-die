@@ -97,7 +97,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
   
   dice3d.addSystem({id:"omniscient-die", name:"Omniscient Die"}, false);
   dice3d.addDicePreset({
-    type:"d6",
+    type:"do",
     system:"omniscient-die",
     labels:[
       'modules/' + moduleName + '/images/' + dieThemePath + '/d1.png', 

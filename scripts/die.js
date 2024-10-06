@@ -1,4 +1,4 @@
-export class dadoDaResposta extends Die {
+export class dadoDaResposta extends foundry.dice.terms.Die {
     constructor(termData) {
         termData.faces=6;
         super(termData);
@@ -9,3 +9,5 @@ export class dadoDaResposta extends Die {
     static DENOMINATION = "o"; // "r";
 
 }
+
+
