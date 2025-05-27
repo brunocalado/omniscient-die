@@ -6,7 +6,7 @@ export class dadoDaResposta extends foundry.dice.terms.Die {
 
     /* -------------------------------------------- */
     /** @override */
-    static DENOMINATION = "o"; // "r";
+    static DENOMINATION = "o"; // "/r 1do";
 
 }
 

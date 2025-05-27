@@ -27,6 +27,7 @@ Hooks.once('init', function() {
   });
   // location ->      "book": game.i18n.localize('STORYTELLER.Settings.ThemeBook'), //[game.i18n.localize("omniscient-die.dice.black.name")]: game.i18n.localize("omniscient-die.dice.black.label"),
 
+/*
   // call this with: game.settings.get("omniscient-die", "chattip")
   game.settings.register(moduleName, 'chattip', {
     name: 'Dica no Chat',
@@ -36,7 +37,7 @@ Hooks.once('init', function() {
     default: false,
     type: Boolean
   });
-  
+  */
   // --------------------------------------------------
   // Keybinding
   game.keybindings.register(moduleName, "omniscientDie", {
@@ -46,9 +47,11 @@ Hooks.once('init', function() {
     onDown: async () =>  {
       const roll = await new Roll("1do").evaluate({async: true});
       game.dice3d.showForRoll(roll, game.user, true); // to show for all users
+      /*
       if ( game.settings.get("omniscient-die", "chattip") ) {
         resultToChatMessage (roll.result);
-      }      
+      } 
+      */     
     },
     onUp: () => {},
     restricted: false,  // Restrict this Keybinding to gamemaster only?
@@ -77,9 +80,12 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
       }
     }); // ONLY ONE RESULT
 
+/*  
+    // Chat Message
     if ( omniscientDieMessageFlag && game.settings.get("omniscient-die", "chattip") ) {
       resultToChatMessage (rollResult);
     }
+*/
 
   } // END MAIN IF
 });
@@ -120,6 +126,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 
 // -----------------------------------
 // Functions
+/*
 function resultToChatMessage (rollResult) {
   rollResult = parseInt(rollResult);
   let messageContent;
@@ -148,3 +155,4 @@ function resultToChatMessage (rollResult) {
     content: messageContent
   }); 
 }
+*/
