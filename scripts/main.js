@@ -83,6 +83,16 @@ Hooks.once('init', function() {
     scope: "world", type: Number, default: 0.8, config: false,
   });
 
+  game.settings.register(moduleName, 'soundSingle', {
+    scope: "world", type: String, default: "", config: false,
+  });
+
+  for (const [face, key] of Object.entries(RESULT_KEYS)) {
+    game.settings.register(moduleName, `sound_${key}`, {
+      scope: "world", type: String, default: "", config: false,
+    });
+  }
+
 // ─── Keybinding ────────────────────────────────────────────
   game.keybindings.register(moduleName, "omniscientDie", {
     name: game.i18n.localize("omniscient-die.keybindings.name"),

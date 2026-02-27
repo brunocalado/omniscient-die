@@ -1,3 +1,6 @@
+# v2.1
+- bugfix
+
 # v2.0
 - Erich Matos Viegas: fixed chat messages
 - Erich Matos Viegas: you can custom everything
