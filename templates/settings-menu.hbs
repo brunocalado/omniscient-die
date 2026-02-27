@@ -1,0 +1,90 @@
+<div class="omniscient-settings-wrapper">
+
+    <!-- NAVIGATION TABS -->
+    <nav class="omniscient-nav tabs">
+        <a class="item active" data-tab="images"><i class="fas fa-image"></i> Custom Images</a>
+        <a class="item" data-tab="sounds"><i class="fas fa-volume-up"></i> Sounds</a>
+    </nav>
+
+    <!-- TAB CONTENT CONTAINER -->
+    <section class="tab-content">
+        
+        <!-- =======================
+             TAB: IMAGES 
+             ======================= -->
+        <div class="tab active" data-tab="images">
+            <div class="config-card">
+                <h3><i class="fas fa-images"></i> Custom Images Per Face</h3>
+                <span class="hint" style="display:block; margin-bottom: 15px;">
+                    Only used if "Chat Image mode" is set to "Custom" in the main settings.
+                </span>
+
+                {{#each faces}}
+                <div class="form-group">
+                    <label>{{localize this.imageNamePath}} (Face {{this.face}})</label>
+                    <div class="file-input-group">
+                        <input type="text" name="customImage_{{this.key}}" value="{{this.customImage}}" placeholder="path/to/image.png">
+                        <button type="button" class="file-picker" data-target="customImage_{{this.key}}" data-type="image" title="Browse Images"><i class="fas fa-image"></i></button>
+                    </div>
+                    <span class="hint">{{localize this.imageHintPath}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- =======================
+             TAB: SOUNDS 
+             ======================= -->
+        <div class="tab" data-tab="sounds">
+            <div class="config-card">
+                <h3><i class="fas fa-headphones"></i> Sound Configuration</h3>
+
+                <div class="form-group">
+                    <label>Global Volume Level (<span class="volume-display">{{soundVolume}}</span>)</label>
+                    <input type="range" name="soundVolume" value="{{soundVolume}}" min="0.0" max="1.0" step="0.05">
+                    <span class="hint" style="color:#e54e4e;">This controls the base volume for all players.</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Sound Mode</label>
+                    <select name="soundMode">
+                        <option value="disabled" {{#if (eq soundMode "disabled")}}selected{{/if}}>Disabled</option>
+                        <option value="single" {{#if (eq soundMode "single")}}selected{{/if}}>Single Sound</option>
+                        <option value="perface" {{#if (eq soundMode "perface")}}selected{{/if}}>Custom Per Face</option>
+                    </select>
+                </div>
+                
+                <!-- Single Sound Mode -->
+                <div class="form-group sound-single-group" style="display: none;">
+                    <label>Single Sound File</label>
+                    <div class="file-input-group">
+                        <input type="text" name="soundSingle" value="{{soundSingle}}" placeholder="path/to/sound.mp3">
+                        <button type="button" class="file-picker" data-target="soundSingle" data-type="audio" title="Browse Audio"><i class="fas fa-music"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Per Face Sound Mode -->
+            <div class="config-card sound-faces-group" style="display: none;">
+                <h3><i class="fas fa-file-audio"></i> Sounds Per Face</h3>
+                
+                {{#each faces}}
+                <div class="form-group">
+                    <label>{{localize this.soundNamePath}} (Face {{this.face}})</label>
+                    <div class="file-input-group">
+                        <input type="text" name="sound_{{this.key}}" value="{{this.sound}}" placeholder="path/to/sound.mp3">
+                        <button type="button" class="file-picker" data-target="sound_{{this.key}}" data-type="audio" title="Browse Audio"><i class="fas fa-music"></i></button>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="sheet-footer flexrow">
+        <button type="submit" name="submit">
+            <i class="far fa-save"></i> Save Configuration
+        </button>
+    </footer>
+</div>

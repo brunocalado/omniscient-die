@@ -1,10 +1,11 @@
-const moduleName = 'omniscient-die';
+export const moduleName = 'omniscient-die';
 
 import {dadoDaResposta} from './die.js';
+import { OmniscientSettingsApp } from './settings.js';
 
 // ─── Face → result key mapping ───────────────────────────────
 // Face 1=yesand  2=no  3=nobut  4=yesbut  5=yes  6=noand
-const RESULT_KEYS = {
+export const RESULT_KEYS = {
   1: 'yesand',
   2: 'no',
   3: 'nobut',
@@ -55,77 +56,39 @@ Hooks.once('init', function() {
     config: true,
   });
 
-  // ── Setting: Chat Image width ─────────────────────────────
-  game.settings.register(moduleName, 'chatImageWidth', {
-    name: game.i18n.localize("omniscient-die.settings.chatImageWidth.name"),
-    hint: game.i18n.localize("omniscient-die.settings.chatImageWidth.hint"),
-    scope: "world",
-    type: Number,
-    range: { min: 80, max: 600, step: 10 },
-    default: 220,
-    config: true,
+  // ── ADVANCED SETTINGS MENU ────────────────────────────────
+  game.settings.registerMenu(moduleName, 'advancedSettings', {
+    name: game.i18n.localize("omniscient-die.settings.menu.name") || "Advanced Settings",
+    label: game.i18n.localize("omniscient-die.settings.menu.label") || "Open Configuration",
+    hint: game.i18n.localize("omniscient-die.settings.menu.hint") || "Configure custom images and sounds.",
+    icon: "fas fa-cogs",
+    type: OmniscientSettingsApp,
+    restricted: true
   });
 
-  // ── Settings: Custom image per face ──────────────────────
+  // ── Settings: Config False (Moved to Menu) ────────────────
+
   for (const [face, key] of Object.entries(RESULT_KEYS)) {
     game.settings.register(moduleName, `customImage_${key}`, {
-      name: game.i18n.localize(`omniscient-die.settings.customImage_${key}.name`),
-      hint: game.i18n.localize(`omniscient-die.settings.customImage_${key}.hint`),
-      scope: "world",
-      type: String,
-      default: "",
-      config: true,
-      filePicker: "image",
+      scope: "world", type: String, default: "", config: false,
     });
   }
 
-  // ── Setting: Sound mode ───────────────────────────────────
   game.settings.register(moduleName, 'soundMode', {
-    name: game.i18n.localize("omniscient-die.settings.soundMode.name"),
-    hint: game.i18n.localize("omniscient-die.settings.soundMode.hint"),
-    scope: "world",
-    type: String,
-    choices: {
-      'disabled': game.i18n.localize("omniscient-die.settings.soundMode.disabled"),
-      'single':   game.i18n.localize("omniscient-die.settings.soundMode.single"),
-      'perface':  game.i18n.localize("omniscient-die.settings.soundMode.perface"),
-    },
-    default: "disabled",
-    config: true,
+    scope: "world", type: String, default: "disabled", config: false,
   });
 
-  // ── Setting: Sound volume (per client) ───────────────────
   game.settings.register(moduleName, 'soundVolume', {
-    name: game.i18n.localize("omniscient-die.settings.soundVolume.name"),
-    hint: game.i18n.localize("omniscient-die.settings.soundVolume.hint"),
-    scope: "client",
-    type: Number,
-    range: { min: 0, max: 1, step: 0.05 },
-    default: 0.8,
-    config: true,
+    scope: "world", type: Number, default: 0.8, config: false,
   });
 
-  // ── Setting: Single sound for all results ─────────────────
   game.settings.register(moduleName, 'soundSingle', {
-    name: game.i18n.localize("omniscient-die.settings.soundSingle.name"),
-    hint: game.i18n.localize("omniscient-die.settings.soundSingle.hint"),
-    scope: "world",
-    type: String,
-    default: "",
-    config: true,
-    filePicker: "audio",
+    scope: "world", type: String, default: "", config: false,
   });
 
-  // ── Settings: Sound per face ──────────────────────────────
   for (const [face, key] of Object.entries(RESULT_KEYS)) {
     game.settings.register(moduleName, `sound_${key}`, {
-      name: game.i18n.localize(`omniscient-die.settings.soundFace_${key}.name`),
-      hint: game.i18n.localize(`omniscient-die.settings.soundFace_${key}.hint`),
-      scope: "world",
-      type: String,
-      default: "",
-      config: true,
-      filePicker: "audio",
+      scope: "world", type: String, default: "", config: false,
     });
   }
 
@@ -166,7 +129,6 @@ Hooks.on('diceSoNiceRollComplete', async (chatMessageID) => {
   const message = game.messages.get(chatMessageID);
   if (!message?.isAuthor) return;
 
-  // v13 fix: message.rolls is an array, not message.roll
   const allDice = (message.rolls ?? []).flatMap(r => r.dice ?? []);
   let rollResult = null;
 
@@ -188,10 +150,9 @@ Hooks.on('diceSoNiceRollComplete', async (chatMessageID) => {
   if (imageMode !== 'disabled') {
     const imgSrc = _resolveImagePath(imageMode, resultKey, rollResult);
     if (imgSrc) {
-      const width          = game.settings.get(moduleName, 'chatImageWidth');
       const currentContent = message.content ?? "";
       const imgHTML = `<div style="text-align:center;margin-top:6px;">
-        <img src="${imgSrc}" width="${width}" style="border-radius:8px;border:none;" />
+        <img src="${imgSrc}" style="width:100%; max-height:300px; object-fit:contain; border-radius:8px; border:none;" />
       </div>`;
       await message.update({ content: currentContent + imgHTML });
     }
@@ -210,24 +171,18 @@ Hooks.on('diceSoNiceRollComplete', async (chatMessageID) => {
       soundSrc = (game.settings.get(moduleName, `sound_${resultKey}`) ?? "").trim();
     }
 
-    // Guard: only play if path is not empty — avoids console errors on blank settings
     if (soundSrc !== "") {
       foundry.audio.AudioHelper.play(
         { src: soundSrc, volume: soundVolume, autoplay: true, loop: false },
-        true  // broadcast to all connected players
+        true 
       );
     }
   }
 
-}); // END diceSoNiceRollComplete
+});
 
 // ─── Helpers ─────────────────────────────────────────────────
 
-/**
- * Resolves the image folder path respecting language and theme settings.
- *   theme-auto  → uses system language, defaults to "color" variant
- *   en-black etc → applies current language prefix but keeps variant
- */
 function _resolveThemePath() {
   const themeSetting = game.settings.get(moduleName, 'theme');
   const lang         = game.settings.get("core", "language");
@@ -237,23 +192,15 @@ function _resolveThemePath() {
     return `${langPrefix}-color`;
   }
 
-  // Strip whatever language prefix is stored and apply current one
   const variant = themeSetting.replace(/^(en|ptbr)-/, '');
   return `${langPrefix}-${variant}`;
 }
 
-/**
- * Returns the image src for a given result.
- *   mode 'theme'  → image from active theme folder
- *   mode 'custom' → image from per-face setting; null if empty
- */
 function _resolveImagePath(mode, resultKey, faceNumber) {
   if (mode === 'custom') {
     const path = (game.settings.get(moduleName, `customImage_${resultKey}`) ?? "").trim();
     return path !== "" ? path : null;
   }
-
-  // mode === 'theme'
   const themePath = _resolveThemePath();
   return `modules/${moduleName}/images/${themePath}/d${faceNumber}.png`;
 }

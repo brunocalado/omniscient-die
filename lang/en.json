@@ -1,6 +1,11 @@
 {
   "omniscient-die": {
     "settings": {
+      "menu": {
+        "name": "Advanced Settings",
+        "label": "Open Configuration",
+        "hint": "Configure custom images and sounds."
+      },
       "theme": {
         "name": "Theme",
         "hint": "Change the dice theme. WARNING! Foundry VTT will reload after changing this.",
@@ -12,10 +17,6 @@
         "disabled": "Disabled",
         "theme": "Use theme images",
         "custom": "Custom images"
-      },
-      "chatImageWidth": {
-        "name": "Chat Image Width (px)",
-        "hint": "Width of the image displayed in the chat message."
       },
       "soundMode": {
         "name": "Sound",

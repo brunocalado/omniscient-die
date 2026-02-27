@@ -1,6 +1,11 @@
 {
   "omniscient-die": {
     "settings": {
+      "menu": {
+        "name": "Configurações Avançadas",
+        "label": "Abrir Configuração",
+        "hint": "Configure imagens personalizadas e sons por face."
+      },
       "theme": {
         "name": "Tema",
         "hint": "Altere o tema do dado. ATENÇÃO! Ao alterar algo o Foundry VTT será recarregado.",
@@ -13,10 +18,6 @@
         "theme": "Usar imagens do tema",
         "custom": "Imagens personalizadas"
       },
-      "chatImageWidth": {
-        "name": "Largura da Imagem no Chat (px)",
-        "hint": "Largura da imagem exibida na mensagem do chat."
-      },
       "soundMode": {
         "name": "Som",
         "hint": "Reproduz um som após a rolagem. 'Único' toca um som para qualquer resultado. 'Por face' toca um som diferente por resultado.",
@@ -26,7 +27,7 @@
       },
       "soundVolume": {
         "name": "Volume do Som",
-        "hint": "Volume do som do resultado. Esta configuração é individual por jogador."
+        "hint": "Volume do som do resultado. Esta configuração é global para todos os jogadores."
       },
       "soundSingle": {
         "name": "Arquivo de Som",
@@ -34,7 +35,7 @@
       },
       "customImage_yesand": {
         "name": "Custom Image — Sim, e...",
-        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Deixe vazio para não mostrar nada."
       },
       "soundFace_yesand": {
         "name": "Sound — Sim, e...",
@@ -42,7 +43,7 @@
       },
       "customImage_no": {
         "name": "Custom Image — Não",
-        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Deixe vazio para não mostrar nada."
       },
       "soundFace_no": {
         "name": "Sound — Não",
@@ -50,7 +51,7 @@
       },
       "customImage_nobut": {
         "name": "Custom Image — Não, mas",
-        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Deixe vazio para não mostrar nada."
       },
       "soundFace_nobut": {
         "name": "Sound — Não, mas",
@@ -58,7 +59,7 @@
       },
       "customImage_yesbut": {
         "name": "Custom Image — Sim, mas",
-        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Deixe vazio para não mostrar nada."
       },
       "soundFace_yesbut": {
         "name": "Sound — Sim, mas",
@@ -66,7 +67,7 @@
       },
       "customImage_yes": {
         "name": "Custom Image — Sim",
-        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Deixe vazio para não mostrar nada."
       },
       "soundFace_yes": {
         "name": "Sound — Sim",
@@ -74,7 +75,7 @@
       },
       "customImage_noand": {
         "name": "Custom Image — Não, e...",
-        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Deixe vazio para não mostrar nada."
       },
       "soundFace_noand": {
         "name": "Sound — Não, e...",

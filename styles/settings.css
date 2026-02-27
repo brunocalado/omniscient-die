@@ -1,0 +1,193 @@
+/* ============================================================
+   Omniscient Die Settings — styles/settings.css
+   ============================================================ */
+
+.omniscient-settings-wrapper {
+    --primary-accent: #6eb5ff;
+    --card-bg: #1c1c22;
+    --border-color: #3a3a44;
+    --text-main: #ffffff;
+    --text-dim: #a1a1aa;
+    --input-bg: #09090b;
+
+    font-family: "Signika", sans-serif;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #141418;
+    padding: 10px;
+
+    /* ── INPUT STYLING ─────────────────────────────────────── */
+    & input[type="text"],
+    & input[type="number"],
+    & select {
+        background: var(--input-bg);
+        border: 1px solid var(--border-color);
+        color: #fff;
+        border-radius: 4px;
+        height: 32px;
+        padding: 0 10px;
+        width: 100%;
+        transition: border-color 0.2s;
+    }
+
+    & input:focus, & select:focus {
+        outline: none;
+        border-color: var(--primary-accent);
+        box-shadow: 0 0 5px rgba(94, 129, 172, 0.3);
+    }
+
+    /* ── RANGE INPUT ───────────────────────────────────────── */
+    & input[type=range] {
+        width: 100%;
+        accent-color: var(--primary-accent);
+    }
+
+    /* ── TABS NAVIGATION ───────────────────────────────────── */
+    & .omniscient-nav {
+        display: flex;
+        gap: 10px;
+        padding: 0 10px;
+        margin-bottom: 15px;
+
+        & a.item {
+            padding: 10px 20px;
+            border-radius: 6px 6px 0 0;
+            background: var(--card-bg);
+            color: var(--text-dim);
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-shadow: none;
+
+            &:hover {
+                color: #ffffff;
+                background: #2a2a35;
+            }
+
+            &.active {
+                background: #2a2a35;
+                color: #ffffff;
+                border-color: var(--border-color);
+                border-top: 3px solid var(--primary-accent);
+                box-shadow: none;
+            }
+        }
+    }
+
+    /* ── TAB CONTENT & ANIMATION ─────────────────────────── */
+    & .tab-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0 5px;
+
+        & .tab {
+            display: none;
+            animation: omniscient-slideIn 0.3s ease-out;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    /* ── CONFIGURATION CARDS ─────────────────────────────── */
+    & .config-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+
+        & h3 {
+            padding-bottom: 5px;
+            margin: 0 0 15px 0;
+            color: var(--primary-accent);
+            font-family: "Aleo", serif;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            opacity: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+    }
+
+    /* ── FORM GROUPS ─────────────────────────────────────── */
+    & .form-group {
+        margin-bottom: 15px;
+
+        & label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #e0e0e0;
+        }
+
+        & .hint {
+            display: block;
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 4px;
+            line-height: 1.4;
+            font-style: italic;
+        }
+    }
+
+    /* ── FILE PICKER GROUP ───────────────────────────────── */
+    & .file-input-group {
+        display: flex;
+        gap: 5px;
+
+        & button {
+            flex: 0 0 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+
+            &:hover:not([disabled]) {
+                background: var(--primary-accent);
+                color: #000000;
+                border-color: var(--primary-accent);
+            }
+        }
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    & .sheet-footer {
+        border-top: 1px solid var(--border-color);
+        padding-top: 15px;
+        margin-top: auto;
+        justify-content: flex-end;
+
+        & button {
+            background: #1c1c22;
+            border: 1px solid var(--border-color);
+            color: #ffffff;
+            padding: 8px 24px;
+            font-family: "Aleo", serif;
+            font-weight: bold;
+            box-shadow: none;
+            border-radius: 4px;
+            text-shadow: none;
+
+            &:hover {
+                background: var(--primary-accent);
+                color: #000000;
+                border-color: var(--primary-accent);
+            }
+        }
+    }
+}
+
+@keyframes omniscient-slideIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
