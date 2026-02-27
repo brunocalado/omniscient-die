@@ -8,8 +8,11 @@
       },
       "theme": {
         "name": "Theme",
-        "hint": "Change the dice theme. WARNING! Foundry VTT will reload after changing this.",
-        "auto": "Auto (follows system language)"
+        "hint": "Change the dice theme. The text language on the dice automatically follows your Foundry VTT system language. WARNING! Foundry VTT will reload after changing this."
+      },
+      "forceDiceColors": {
+        "name": "Force 3D Colors",
+        "hint": "If enabled, forces the 3D die to use solid colors matching the selected theme (e.g. Black for Blood). If disabled, uses each player's default 'Dice So Nice!' settings. WARNING! Foundry VTT will reload after changing this."
       },
       "chatImage": {
         "name": "Chat Image",

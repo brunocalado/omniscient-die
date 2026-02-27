@@ -8,8 +8,11 @@
       },
       "theme": {
         "name": "Tema",
-        "hint": "Altere o tema do dado. ATENÇÃO! Ao alterar algo o Foundry VTT será recarregado.",
-        "auto": "Automático (segue o idioma do sistema)"
+        "hint": "Altere o tema do dado. O idioma do texto no dado segue automaticamente o idioma do seu Foundry VTT. ATENÇÃO! O Foundry VTT será recarregado após alterar isso."
+      },
+      "forceDiceColors": {
+        "name": "Forçar Cores 3D",
+        "hint": "Se ativado, força o dado 3D a usar cores que combinam com o tema escolhido (Ex: Fundo preto para o tema Blood). Se desativado, o dado usa as configurações de cor que cada jogador escolheu no 'Dice So Nice!'. ATENÇÃO! O Foundry será recarregado após alterar isso."
       },
       "chatImage": {
         "name": "Imagem no Chat",

@@ -16,7 +16,6 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
     };
 
     static PARTS = {
-        // String hardcoded para evitar dependência circular na inicialização estática
         content: { template: `modules/omniscient-die/templates/settings-menu.hbs` }
     };
 
@@ -35,6 +34,7 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
         });
 
         return {
+            chatImageMode: game.settings.get(moduleName, 'chatImage'),
             soundMode: game.settings.get(moduleName, 'soundMode'),
             soundVolume: game.settings.get(moduleName, 'soundVolume'),
             soundSingle: game.settings.get(moduleName, 'soundSingle'),
@@ -82,7 +82,19 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
             });
         }
 
-        // --- SOUND MODE TOGGLE (UI UX) ---
+        // --- CHAT IMAGE MODE TOGGLE ---
+        const chatImageSelect = html.querySelector('select[name="chatImageMode"]');
+        const customImagesDiv = html.querySelector('.custom-images-group');
+
+        if (chatImageSelect) {
+            const updateImageVisibility = () => {
+                customImagesDiv.style.display = chatImageSelect.value === 'custom' ? 'block' : 'none';
+            };
+            chatImageSelect.addEventListener('change', updateImageVisibility);
+            updateImageVisibility();
+        }
+
+        // --- SOUND MODE TOGGLE ---
         const soundModeSelect = html.querySelector('select[name="soundMode"]');
         const soundSingleDiv = html.querySelector('.sound-single-group');
         const soundFacesDiv = html.querySelector('.sound-faces-group');
@@ -102,6 +114,7 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
             e.preventDefault();
             const formData = new FormData(e.target);
 
+            await game.settings.set(moduleName, 'chatImage', formData.get('chatImageMode'));
             await game.settings.set(moduleName, 'soundMode', formData.get('soundMode'));
             await game.settings.set(moduleName, 'soundVolume', parseFloat(formData.get('soundVolume')));
             await game.settings.set(moduleName, 'soundSingle', formData.get('soundSingle'));

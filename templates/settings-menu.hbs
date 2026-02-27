@@ -2,7 +2,7 @@
 
     <!-- NAVIGATION TABS -->
     <nav class="omniscient-nav tabs">
-        <a class="item active" data-tab="images"><i class="fas fa-image"></i> Custom Images</a>
+        <a class="item active" data-tab="images"><i class="fas fa-image"></i> Chat Images</a>
         <a class="item" data-tab="sounds"><i class="fas fa-volume-up"></i> Sounds</a>
     </nav>
 
@@ -13,11 +13,22 @@
              TAB: IMAGES 
              ======================= -->
         <div class="tab active" data-tab="images">
+            
             <div class="config-card">
+                <h3><i class="fas fa-comment-dots"></i> Chat Image Mode</h3>
+                <div class="form-group">
+                    <label>Display Mode</label>
+                    <select name="chatImageMode">
+                        <option value="disabled" {{#if (eq chatImageMode "disabled")}}selected{{/if}}>{{localize "omniscient-die.settings.chatImage.disabled"}}</option>
+                        <option value="theme" {{#if (eq chatImageMode "theme")}}selected{{/if}}>{{localize "omniscient-die.settings.chatImage.theme"}}</option>
+                        <option value="custom" {{#if (eq chatImageMode "custom")}}selected{{/if}}>{{localize "omniscient-die.settings.chatImage.custom"}}</option>
+                    </select>
+                    <span class="hint">{{localize "omniscient-die.settings.chatImage.hint"}}</span>
+                </div>
+            </div>
+
+            <div class="config-card custom-images-group" style="display: none;">
                 <h3><i class="fas fa-images"></i> Custom Images Per Face</h3>
-                <span class="hint" style="display:block; margin-bottom: 15px;">
-                    Only used if "Chat Image mode" is set to "Custom" in the main settings.
-                </span>
 
                 {{#each faces}}
                 <div class="form-group">
@@ -30,6 +41,7 @@
                 </div>
                 {{/each}}
             </div>
+
         </div>
 
         <!-- =======================

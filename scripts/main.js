@@ -4,7 +4,6 @@ import {dadoDaResposta} from './die.js';
 import { OmniscientSettingsApp } from './settings.js';
 
 // ─── Face → result key mapping ───────────────────────────────
-// Face 1=yesand  2=no  3=nobut  4=yesbut  5=yes  6=noand
 export const RESULT_KEYS = {
   1: 'yesand',
   2: 'no',
@@ -18,7 +17,6 @@ export const RESULT_KEYS = {
 
 Hooks.once('init', function() {
 
-  // Register die term
   CONFIG.Dice.terms["o"] = dadoDaResposta;
 
   // ── Setting: Theme ────────────────────────────────────────
@@ -28,32 +26,27 @@ Hooks.once('init', function() {
     scope: "world",
     type: String,
     choices: {
-      'theme-auto':  game.i18n.localize("omniscient-die.settings.theme.auto"),
-      'en-black':    game.i18n.localize("omniscient-die.dice.black.label"),
-      'en-blood':    game.i18n.localize("omniscient-die.dice.blood.label"),
-      'en-color':    game.i18n.localize("omniscient-die.dice.color.label"),
-      'en-color2':   game.i18n.localize("omniscient-die.dice.color2.label"),
-      'en-white':    game.i18n.localize("omniscient-die.dice.white.label"),
-      'en-modern':   game.i18n.localize("omniscient-die.dice.modern.label"),
+      'color':    game.i18n.localize("omniscient-die.dice.color.label"),
+      'color2':   game.i18n.localize("omniscient-die.dice.color2.label"),
+      'black':    game.i18n.localize("omniscient-die.dice.black.label"),
+      'blood':    game.i18n.localize("omniscient-die.dice.blood.label"),
+      'white':    game.i18n.localize("omniscient-die.dice.white.label"),
+      'modern':   game.i18n.localize("omniscient-die.dice.modern.label"),
     },
-    default: "theme-auto",
+    default: "color",
     config: true,
     requiresReload: true
   });
 
-  // ── Setting: Chat Image mode ──────────────────────────────
-  game.settings.register(moduleName, 'chatImage', {
-    name: game.i18n.localize("omniscient-die.settings.chatImage.name"),
-    hint: game.i18n.localize("omniscient-die.settings.chatImage.hint"),
+  // ── Setting: Force 3D Colors ──────────────────────────────
+  game.settings.register(moduleName, 'forceDiceColors', {
+    name: game.i18n.localize("omniscient-die.settings.forceDiceColors.name"),
+    hint: game.i18n.localize("omniscient-die.settings.forceDiceColors.hint"),
     scope: "world",
-    type: String,
-    choices: {
-      'disabled': game.i18n.localize("omniscient-die.settings.chatImage.disabled"),
-      'theme':    game.i18n.localize("omniscient-die.settings.chatImage.theme"),
-      'custom':   game.i18n.localize("omniscient-die.settings.chatImage.custom"),
-    },
-    default: "theme",
+    type: Boolean,
+    default: true,
     config: true,
+    requiresReload: true
   });
 
   // ── ADVANCED SETTINGS MENU ────────────────────────────────
@@ -67,6 +60,10 @@ Hooks.once('init', function() {
   });
 
   // ── Settings: Config False (Moved to Menu) ────────────────
+
+  game.settings.register(moduleName, 'chatImage', {
+    scope: "world", type: String, default: "theme", config: false,
+  });
 
   for (const [face, key] of Object.entries(RESULT_KEYS)) {
     game.settings.register(moduleName, `customImage_${key}`, {
@@ -113,14 +110,52 @@ Hooks.once('init', function() {
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
   const themePath = _resolveThemePath();
+  
+  // Resgata o tema limpo (ex: "black", "blood")
+  let themeSetting = game.settings.get(moduleName, 'theme');
+  if (themeSetting === 'theme-auto') themeSetting = 'color';
+  themeSetting = themeSetting.replace(/^(en|ptbr)-/, '');
+
+  const forceColors = game.settings.get(moduleName, 'forceDiceColors');
 
   dice3d.addSystem({ id: "omniscient-die", name: "Omniscient Die" }, false);
-  dice3d.addDicePreset({
+  
+  let presetData = {
     type: "do",
     system: "omniscient-die",
     labels: [1,2,3,4,5,6].map(n => `modules/${moduleName}/images/${themePath}/d${n}.png`),
     bumpMaps: [1,2,3,4,5,6].map(n => `modules/${moduleName}/images/${themePath}/d${n}_bump.png`),
-  });
+  };
+
+  if (forceColors) {
+    // Define as cores para cada tema. Black e Blood possuem fundo preto (#111).
+    const colors = {
+      'black':  { bg: '#111111', fg: '#ffffff', outline: '#000000', edge: '#111111' },
+      'blood':  { bg: '#111111', fg: '#b30000', outline: '#4a0000', edge: '#111111' },
+      'color':  { bg: '#1a1a1a', fg: '#ffffff', outline: '#1a1a1a', edge: '#1a1a1a' },
+      'color2': { bg: '#111111', fg: '#ffffff', outline: '#000000', edge: '#111111' },
+      'white':  { bg: '#111111', fg: '#ffffff', outline: '#000000', edge: '#111111' },
+      'modern': { bg: '#2b2b36', fg: '#00ffff', outline: '#2b2b36', edge: '#2b2b36' }
+    }[themeSetting] || { bg: '#111111', fg: '#ffffff', outline: '#000000', edge: '#111111' };
+
+    // Registra o colorset no motor 3D
+    dice3d.addColorset({
+      name: `omniscient-${themeSetting}`,
+      description: `Omniscient ${themeSetting}`,
+      category: "Omniscient Die",
+      foreground: colors.fg,
+      background: colors.bg,
+      outline: colors.outline,
+      edge: colors.edge,
+      texture: 'none',
+      material: 'plastic'
+    });
+
+    // Força o nosso dado a usar esse colorset
+    presetData.colorset = `omniscient-${themeSetting}`;
+  }
+
+  dice3d.addDicePreset(presetData);
 });
 
 // ─── Dice So Nice — roll complete → image + sound ─────────────
@@ -184,16 +219,16 @@ Hooks.on('diceSoNiceRollComplete', async (chatMessageID) => {
 // ─── Helpers ─────────────────────────────────────────────────
 
 function _resolveThemePath() {
-  const themeSetting = game.settings.get(moduleName, 'theme');
+  let themeSetting = game.settings.get(moduleName, 'theme');
+  
+  // Retrocompatibility: sanitize legacy database values 
+  if (themeSetting === 'theme-auto') themeSetting = 'color';
+  themeSetting = themeSetting.replace(/^(en|ptbr)-/, '');
+
   const lang         = game.settings.get("core", "language");
   const langPrefix   = lang === 'pt-BR' ? 'ptbr' : 'en';
 
-  if (themeSetting === 'theme-auto') {
-    return `${langPrefix}-color`;
-  }
-
-  const variant = themeSetting.replace(/^(en|ptbr)-/, '');
-  return `${langPrefix}-${variant}`;
+  return `${langPrefix}-${themeSetting}`;
 }
 
 function _resolveImagePath(mode, resultKey, faceNumber) {
