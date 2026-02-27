@@ -1,68 +1,135 @@
 {
-  
-	"omniscient-die": {
-    
-		"settings": {
-			"theme": {
+  "omniscient-die": {
+    "settings": {
+      "theme": {
         "name": "Tema",
-				"hint": "Altere o tema do dado. ATENÇÃO! Ao alterar algo o Foundry VTT será recarregado."
-			}
+        "hint": "Altere o tema do dado. ATENÇÃO! Ao alterar algo o Foundry VTT será recarregado.",
+        "auto": "Automático (segue o idioma do sistema)"
+      },
+      "chatImage": {
+        "name": "Imagem no Chat",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. 'Tema' usa as imagens do tema ativo. 'Personalizado' usa as imagens configuradas abaixo.",
+        "disabled": "Desativado",
+        "theme": "Usar imagens do tema",
+        "custom": "Imagens personalizadas"
+      },
+      "chatImageWidth": {
+        "name": "Largura da Imagem no Chat (px)",
+        "hint": "Largura da imagem exibida na mensagem do chat."
+      },
+      "soundMode": {
+        "name": "Som",
+        "hint": "Reproduz um som após a rolagem. 'Único' toca um som para qualquer resultado. 'Por face' toca um som diferente por resultado.",
+        "disabled": "Desativado",
+        "single": "Som único (qualquer resultado)",
+        "perface": "Um som por resultado"
+      },
+      "soundVolume": {
+        "name": "Volume do Som",
+        "hint": "Volume do som do resultado. Esta configuração é individual por jogador."
+      },
+      "soundSingle": {
+        "name": "Arquivo de Som",
+        "hint": "Arquivo de áudio reproduzido após qualquer resultado. Deixe em branco para não reproduzir nada."
+      },
+      "customImage_yesand": {
+        "name": "Custom Image — Sim, e...",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+      },
+      "soundFace_yesand": {
+        "name": "Sound — Sim, e...",
+        "hint": "Arquivo de áudio reproduzido quando este resultado é rolado. Deixe em branco para não reproduzir nada."
+      },
+      "customImage_no": {
+        "name": "Custom Image — Não",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+      },
+      "soundFace_no": {
+        "name": "Sound — Não",
+        "hint": "Arquivo de áudio reproduzido quando este resultado é rolado. Deixe em branco para não reproduzir nada."
+      },
+      "customImage_nobut": {
+        "name": "Custom Image — Não, mas",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+      },
+      "soundFace_nobut": {
+        "name": "Sound — Não, mas",
+        "hint": "Arquivo de áudio reproduzido quando este resultado é rolado. Deixe em branco para não reproduzir nada."
+      },
+      "customImage_yesbut": {
+        "name": "Custom Image — Sim, mas",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+      },
+      "soundFace_yesbut": {
+        "name": "Sound — Sim, mas",
+        "hint": "Arquivo de áudio reproduzido quando este resultado é rolado. Deixe em branco para não reproduzir nada."
+      },
+      "customImage_yes": {
+        "name": "Custom Image — Sim",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+      },
+      "soundFace_yes": {
+        "name": "Sound — Sim",
+        "hint": "Arquivo de áudio reproduzido quando este resultado é rolado. Deixe em branco para não reproduzir nada."
+      },
+      "customImage_noand": {
+        "name": "Custom Image — Não, e...",
+        "hint": "Exibe uma imagem na mensagem do chat após rolar o dado. Leave empty to show nothing."
+      },
+      "soundFace_noand": {
+        "name": "Sound — Não, e...",
+        "hint": "Arquivo de áudio reproduzido quando este resultado é rolado. Deixe em branco para não reproduzir nada."
+      }
     },
-    
-		"keybindings": {
+    "keybindings": {
       "name": "Dado Onisciente",
       "hint": "Esse atalho vai rolar o dado Onisciente."
-    },    
-    
-		"tips": {
-			"yesand": {
+    },
+    "tips": {
+      "yesand": {
         "title": "Sim, e...",
-				"content": "Sim e tem um efeito ampliado."
-			},        
+        "content": "Sim e tem um efeito ampliado."
+      },
       "no": {
         "title": "Não",
         "content": "O esperado do não."
       },
-			"nobut": {
+      "nobut": {
         "title": "Não, mas",
         "content": "Pode ser um não parcial, pode ser um não com uma complicação."
       },
-			"yesbut": {
+      "yesbut": {
         "title": "Sim, mas",
         "content": "Pode ser um sim parcial, pode ser um sim com uma complicação."
       },
-			"yes": {
+      "yes": {
         "title": "Sim",
         "content": "O esperado do sim."
       },
-			"noand": {
+      "noand": {
         "title": "Não, e...",
         "content": "Não e tem um efeito ampliado."
-      }      
-    },   
-
-		"dice": {
-			"black": {
-				"label": "Preto"
-			},
-			"blood": {
-				"label": "Sangue"
-			},
-			"color": {
-				"label": "Colorido"
-			},
-			"color2": {
-				"label": "Colorido 2"
-			},
-			"white": {
-				"label": "Branco"
-			},
-			"modern": {
-				"label": "Moderno"
-			}   
-    }     
-    
+      }
+    },
+    "dice": {
+      "black": {
+        "label": "Preto"
+      },
+      "blood": {
+        "label": "Sangue"
+      },
+      "color": {
+        "label": "Colorido"
+      },
+      "color2": {
+        "label": "Colorido 2"
+      },
+      "white": {
+        "label": "Branco"
+      },
+      "modern": {
+        "label": "Moderno"
+      }
+    }
   }
-
 }
-

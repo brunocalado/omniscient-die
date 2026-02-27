@@ -1,2 +1,9 @@
 omniscient-die.lock
 WORKSPACE/*
+.gitignore
+.gitattributes
+flihadaputaoce.ogg
+*.code-workspace
+AI-GUIDE.md
+.claudeignore
+.aiexclude

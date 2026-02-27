@@ -4,7 +4,7 @@
 	"title": "Omniscient Die",
 	"description": "/r 1do will answer your question!",
   
-	"version": "1.9",
+	"version": "2.0",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -14,6 +14,10 @@
     {
       "name": "Mestre Digital",
       "url": "https://www.youtube.com/c/MestreDigital",
+      "flags": {}
+    },
+    {
+      "name": "Erich Matos Viegas",
       "flags": {}
     }
   ],
@@ -52,4 +56,3 @@
   "download": "https://codeload.github.com/brunocalado/omniscient-die/zip/main"
   
 }
-
