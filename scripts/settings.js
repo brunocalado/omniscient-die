@@ -65,7 +65,11 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
                 const target = event.currentTarget.dataset.target;
                 const type = event.currentTarget.dataset.type || "image";
                 const input = html.querySelector(`input[name="${target}"]`);
-                new foundry.applications.apps.FilePicker.implementation({
+                
+                // Resolução de compatibilidade para The Forge vs Instância Local
+                const FilePickerClass = foundry.applications.apps.FilePicker.implementation ?? foundry.applications.apps.FilePicker;
+
+                new FilePickerClass({
                     type: type,
                     current: input.value,
                     callback: path => { input.value = path; }

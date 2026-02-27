@@ -79,24 +79,14 @@ Hooks.once('init', function() {
     scope: "world", type: Number, default: 0.8, config: false,
   });
 
-  game.settings.register(moduleName, 'soundSingle', {
-    scope: "world", type: String, default: "", config: false,
-  });
-
-  for (const [face, key] of Object.entries(RESULT_KEYS)) {
-    game.settings.register(moduleName, `sound_${key}`, {
-      scope: "world", type: String, default: "", config: false,
-    });
-  }
-
-  // ── Keybinding ────────────────────────────────────────────
+// ─── Keybinding ────────────────────────────────────────────
   game.keybindings.register(moduleName, "omniscientDie", {
     name: game.i18n.localize("omniscient-die.keybindings.name"),
     hint: game.i18n.localize("omniscient-die.keybindings.hint"),
     editable: [{ key: "KeyO", modifiers: [] }],
     onDown: async () => {
-      const roll = await new Roll("1do").evaluate({ async: true });
-      game.dice3d.showForRoll(roll, game.user, true);
+      const roll = await new Roll("1do").evaluate();
+      roll.toMessage(); // Corrigido: Emula exatamente o "/r 1do" e aciona sons/imagens
     },
     onUp: () => {},
     restricted: false,
@@ -106,8 +96,34 @@ Hooks.once('init', function() {
 
 }); // END INIT
 
-// ─── Dice So Nice — register preset ──────────────────────────
+// ─── Scene Control Button (Sidebar) ──────────────────────────
+Hooks.on("getSceneControlButtons", (controls) => {
+  // Compatibilidade cruzada: Foundry V12- (Array) vs V13+ (Object)
+  const notesControl = Array.isArray(controls) 
+    ? controls.find(c => c.name === "notes") 
+    : controls.notes;
 
+  if (notesControl) {
+    const btnDef = {
+      name: "omniscientDie",
+      title: game.i18n.localize("omniscient-die.keybindings.name") || "Omniscient Die",
+      icon: "fa-solid fa-question-circle",
+      button: true,
+      onChange: async () => {
+        const roll = await new Roll("1do").evaluate();
+        roll.toMessage();
+      }
+    };
+
+    if (Array.isArray(notesControl.tools)) {
+      notesControl.tools.push(btnDef);
+    } else if (notesControl.tools) {
+      notesControl.tools.omniscientDie = btnDef;
+    }
+  }
+});
+
+// ─── Dice So Nice — register preset ──────────────────────────
 Hooks.once('diceSoNiceReady', (dice3d) => {
   const themePath = _resolveThemePath();
   

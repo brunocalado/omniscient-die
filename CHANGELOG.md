@@ -4,6 +4,7 @@
 - Settings Refactor 
 - FilePicker works on the forge
 - default dice color 
+- button for quick access inside notes
 
 # v1.9
 - v13
