@@ -3,8 +3,12 @@ import { RESULT_KEYS } from './main.js';
 
 const moduleName = 'omniscient-die';
 
+/**
+ * An ApplicationV2 for configuring advanced module settings for images and sounds.
+ * @extends {HandlebarsApplicationMixin(ApplicationV2)}
+ */
 export class OmniscientSettingsApp extends HandlebarsApplicationMixin(ApplicationV2) {
-
+    /** @override */
     static DEFAULT_OPTIONS = {
         id: "omniscient-settings-app",
         tag: "form",
@@ -15,10 +19,18 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
         position: { width: 550, height: 650 }
     };
 
+    /** @override */
     static PARTS = {
         content: { template: `modules/omniscient-die/templates/settings-menu.hbs` }
     };
 
+    /**
+     * Prepares the data context for rendering the settings application template.
+     * This is an ApplicationV2 lifecycle method that runs before the template is rendered.
+     * @param {object} _options - Application rendering options.
+     * @returns {Promise<object>} The context data for the template.
+     * @override
+     */
     async _prepareContext(_options) {
         const faces = Object.entries(RESULT_KEYS).map(([face, key]) => {
             return {
@@ -42,6 +54,13 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
         };
     }
 
+    /**
+     * Attaches event listeners to the application's HTML element after it has been rendered.
+     * This is an ApplicationV2 lifecycle method.
+     * @param {object} context - The data context used to render the template.
+     * @param {object} options - Application rendering options.
+     * @override
+     */
     _onRender(context, options) {
         const html = this.element;
 
@@ -67,6 +86,7 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
                 const input = html.querySelector(`input[name="${target}"]`);
                 
                 // Resolução de compatibilidade para The Forge vs Instância Local
+                // FIXME: This is a workaround for FilePicker implementation differences between local Foundry and The Forge.
                 const FilePickerClass = foundry.applications.apps.FilePicker.implementation ?? foundry.applications.apps.FilePicker;
 
                 new FilePickerClass({
@@ -113,7 +133,7 @@ export class OmniscientSettingsApp extends HandlebarsApplicationMixin(Applicatio
             updateSoundVisibility();
         }
 
-        // --- SUBMIT LOGIC ---
+        // --- FORM SUBMISSION ---
         html.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
